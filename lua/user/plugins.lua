@@ -88,19 +88,31 @@ return packer.startup(function(use)
   use { "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" } -- a bunch of snippets to use
   use { "saadparwaiz1/cmp_luasnip", commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36" } -- snippet completions
 
-  -- LSP
-  use { "williamboman/mason.nvim", commit = "c2002d7a6b5a72ba02388548cfaf420b864fbc12"} -- simple to use language server installer
-  use { "williamboman/mason-lspconfig.nvim", commit = "0051870dd728f4988110a1b2d47f4a4510213e31" }
-	use { "neovim/nvim-lspconfig", commit = "f11fdff7e8b5b415e5ef1837bdcdd37ea6764dda" } -- enable LSP
-	use { "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" } -- for formatters and linters
-  use { "jose-elias-alvarez/typescript.nvim" }
-  use { "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" }
-	use { "hrsh7th/cmp-nvim-lsp", commit = "3cf38d9c957e95c397b66f91967758b31be4abe6" }
-	use { "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" }
-  use { "glepnir/lspsaga.nvim", branch = "main" }
-  use { "onsails/lspkind.nvim" }
+  -- managing & installing lsp servers, linters & formatters
+  use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
+  use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
 
-	-- Telescope
+  -- configuring lsp servers
+  use("neovim/nvim-lspconfig") -- easily configure language servers
+  use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
+  use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    requires = {
+      { "nvim-tree/nvim-web-devicons" },
+      { "nvim-treesitter/nvim-treesitter" },
+    },
+  }) 
+
+  -- enhanced lsp uis
+  use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
+  use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
+
+  -- formatting & linting
+  use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
+  use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
+	
+  -- Telescope
 	use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
   use { "nvim-telescope/telescope.nvim", branch = "0.1.x" }
 

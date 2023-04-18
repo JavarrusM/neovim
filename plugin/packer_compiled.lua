@@ -109,11 +109,6 @@ _G.packer_plugins = {
     path = "/home/varrus/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
-  ["cmp-nvim-lua"] = {
-    loaded = true,
-    path = "/home/varrus/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
-    url = "https://github.com/hrsh7th/cmp-nvim-lua"
-  },
   ["cmp-path"] = {
     loaded = true,
     path = "/home/varrus/.local/share/nvim/site/pack/packer/start/cmp-path",
@@ -168,6 +163,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/varrus/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason-null-ls.nvim"] = {
+    loaded = true,
+    path = "/home/varrus/.local/share/nvim/site/pack/packer/start/mason-null-ls.nvim",
+    url = "https://github.com/jayp0521/mason-null-ls.nvim"
   },
   ["mason.nvim"] = {
     loaded = true,
@@ -263,11 +263,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/varrus/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
-  },
-  ["vim-illuminate"] = {
-    loaded = true,
-    path = "/home/varrus/.local/share/nvim/site/pack/packer/start/vim-illuminate",
-    url = "https://github.com/RRethy/vim-illuminate"
   },
   ["vim-maximizer"] = {
     loaded = true,
