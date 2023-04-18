@@ -5,6 +5,7 @@ local term_opts = { silent = true }
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
+local keymap2 = vim.keymap
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -26,7 +27,27 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+keymap("n", "<leader>nh", ":nohl<CR>", opts)
 keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+
+-- Increment --
+keymap("n", "<leader>+", "<C-a>", opts)
+keymap("n", "<leader>-", "<C-x>", opts)
+
+-- Delete --
+keymap("n", "x", "_x", opts)
+
+-- Window splits --
+keymap("n", "<leader>sv", "<C-w>v", opts) -- vertical
+keymap("n", "<leader>sh", "<C-w>s", opts) -- horizontal
+keymap("n", "<leader>se", "<C-w>=", opts) -- equal width
+keymap("n", "<leader>sx", ":close<CR>", opts) -- close
+
+-- Tab navigation -- 
+keymap("n", "<leader>to", ":tabnew<CR>", opts) -- new tabnew
+keymap("n", "<leader>tx", ":tabclose<CR>", opts) -- close current tabnew
+keymap("n", "<leader>tn", ":tabn<CR>", opts) -- next tab 
+keymap("n", "<leader>tp", ":tabp<CR>", opts) -- previous tab
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -71,3 +92,16 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+-- Plugins --
+-- vim-maximizer
+keymap("n", "<leader>sm", ":MaximizerToggle<CR>", opts)
+
+-- nvim-tree
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+
+-- telescope
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts) 
+keymap("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", opts)
+keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
