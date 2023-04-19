@@ -1,14 +1,18 @@
-require "user.options"
-require "user.keymaps"
-require "user.plugins"
-require "user.colorscheme"
-require "user.cmp"
-require "user.lsp.luasaga"
-require "user.lsp.lspconfig"
-require "user.lsp.mason"
-require "user.comment"
-require "user.nvim-tree"
-require "user.lualine"
-require "user.telescope"
+require("user.options")
+require("user.keymaps")
+require("user.plugins")
+require("user.colorscheme")
+require("user.cmp")
+require("user.lsp.luasaga")
+require("user.lsp.lspconfig")
+require("user.lsp.mason")
+require("user.lsp.null-ls")
+require("user.comment")
+require("user.nvim-tree")
+require("user.lualine")
+require("user.telescope")
+require("user.autopairs")
+require("user.treesitter")
+require("user.gitsigns")
 
-vim.cmd "colorscheme tokyonight"
+vim.cmd("colorscheme tokyonight")
